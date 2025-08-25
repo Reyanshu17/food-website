@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Four - Authentic Chinese Cuisine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+        }
+        
+        .chinese-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .search-results {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.9) 0%, rgba(185, 28, 28, 0.9) 50%, rgba(127, 29, 29, 0.9) 100%);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-red-800 text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="chinese-font text-2xl md:text-3xl font-bold">章四</h1>
+                    <span class="ml-2 text-xl md:text-2xl font-semibold">Chapter Four</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-yellow-300 transition-colors">Home</a>
+                    <a href="#menu" class="hover:text-yellow-300 transition-colors">Menu</a>
+                    <a href="#about" class="hover:text-yellow-300 transition-colors">About</a>
+                    <a href="#contact" class="hover:text-yellow-300 transition-colors">Contact</a>
+                </div>
+                
+                <div class="relative">
+                    <input type="text" placeholder="Search menu..." 
+                           class="bg-red-700 text-white px-4 py-2 rounded-full w-40 md:w-64 focus:outline-none focus:ring-2 focus:ring-yellow-300 placeholder-red-200"
+                           id="searchInput">
+                    <div class="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-2 hidden z-50 search-results" id="searchResults"></div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-96 md:h-screen bg-gray-100">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9583f43f-834b-4bc2-b65d-cdc4271cbe10.png" alt="Elegant Chinese restaurant interior with red and gold decor, traditional lanterns, and beautifully set tables" class="w-full h-full object-cover">
+        
+        <div class="absolute inset-0 flex items-center justify-center text-center">
+            <div class="hero-gradient p-8 md:p-12 rounded-lg mx-4">
+                <h2 class="chinese-font text-4xl md:text-6xl text-white font-bold mb-4">章四</h2>
+                <h3 class="text-2xl md:text-4xl text-yellow-300 font-semibold mb-6">Chapter Four</h3>
+                <p class="text-white text-lg md:text-xl mb-8">Authentic Chinese Cuisine • Family Tradition Since 1985</p>
+                <button class="bg-yellow-500 text-red-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-colors">
+                    View Our Menu
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Dishes -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Signature Dishes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7072548d-e8c3-4baa-bf77-d9600256d3e1.png" alt="Peking Duck with crispy skin served with thin pancakes, scallions, and hoisin sauce" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Peking Duck</h3>
+                        <p class="text-gray-600 mb-4">Crispy roasted duck served with thin pancakes, scallions, and hoisin sauce</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$38.95</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/afbfc295-8100-4adf-9746-e1c7d065dbac.png" alt="Kung Pao Chicken with peanuts, vegetables, and chili peppers in a savory sauce" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Kung Pao Chicken</h3>
+                        <p class="text-gray-600 mb-4">Spicy stir-fry with chicken, peanuts, vegetables, and chili peppers</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$22.95</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/53c005ec-2e18-4efb-b649-decbe72a06ff.png" alt="Dim Sum assortment including steamed buns, dumplings, and spring rolls on bamboo trays" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Chef's Choice
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Dim Sum Platter</h3>
+                        <p class="text-gray-600 mb-4">Assortment of steamed and fried dumplings, buns, and rolls</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$28.95</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Our Menu</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <button class="category-btn bg-red-600 text-white px-6 py-3 rounded-lg font-semibold" data-category="all">All Items</button>
+                <button class="category-btn bg-white text-red-600 px-6 py-3 rounded-lg font-semibold border border-red-600" data-category="appetizers">Appetizers</button>
+                <button class="category-btn bg-white text-red-600 px-6 py-3 rounded-lg font-semibold border border-red-600" data-category="mains">Main Courses</button>
+                <button class="category-btn bg-white text-red-600 px-6 py-3 rounded-lg font-semibold border border-red-600" data-category="desserts">Desserts</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menuContainer">
+                <!-- Menu items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3af4cfe5-9b4f-4d86-9e63-7e90200e9686.png" alt="Traditional Chinese kitchen with woks, steamers, and chefs preparing authentic dishes" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-4">
+                        Founded in 1985, Chapter Four has been serving authentic Chinese cuisine for over three decades. 
+                        Our recipes have been passed down through generations, preserving the rich flavors and traditions 
+                        of Chinese culinary heritage.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Each dish tells a story - from the bustling streets of Beijing to the serene countryside of Sichuan. 
+                        We use only the freshest ingredients and traditional cooking methods to bring you an unforgettable 
+                        dining experience.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-600">35+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-600">200+</div>
+                            <div class="text-gray-600">Dishes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-red-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Visit Us</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-red-700 p-6 rounded-lg">
+                        <i class="fas fa-map-marker-alt text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Location</h3>
+                        <p>123 Dragon Street<br>Chinatown, NY 10001</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-red-700 p-6 rounded-lg">
+                        <i class="fas fa-clock text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Hours</h3>
+                        <p>Mon-Thu: 11AM - 10PM<br>Fri-Sat: 11AM - 11PM<br>Sun: 12PM - 9PM</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-red-700 p-6 rounded-lg">
+                        <i class="fas fa-phone text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Contact</h3>
+                        <p>Phone: (555) 123-4567<br>Email: info@chapterfour.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="bg-yellow-500 text-red-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-colors mr-4">
+                    Make Reservation
+                </button>
+                <button class="border-2 border-yellow-500 text-yellow-300 px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-red-900 transition-colors">
+                    Order Delivery
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="chinese-font text-2xl font-bold mb-4">章四</h3>
+                    <p class="text-gray-400">Authentic Chinese cuisine served with tradition and passion since 1985.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-yellow-300">Home</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-yellow-300">Menu</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-yellow-300">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-yellow-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-2">Subscribe for special offers</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-2 rounded-l focus:outline-none">
+                        <button class="bg-red-600 px-4 py-2 rounded-r hover:bg-red-700">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2024 Chapter Four Chinese Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Data
+        const menuItems = [
+            {
+                id: 1,
+                name: "Spring Rolls",
+                category: "appetizers",
+                price: 8.95,
+                description: "Crispy vegetables wrapped in thin pastry, served with sweet chili sauce",
+                image: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/25a3b4f4-2c27-4db6-a229-13c5581855e6.png"
+            },
+            {
+                id: 2,
+                name: "Peking Duck",
+                category: "mains",
+                price: 38.95,
+                description: "Crispy roasted duck served with thin pancakes, scallions, and hoisin sauce",
+                image: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7072548d-e8c3-4baa-bf77-d9600256d3e1.png"
+            },
+            {
+                id: 3,
+                name: "Kung Pao Chicken",
+                category: "mains",
+                price: 22.95,
+                description: "Spicy stir-fry with chicken, peanuts, vegetables, and chili peppers",
+                image: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/afbfc295-8100-4adf-9746-e1c7d065dbac.png"
+            },
+            {
+                id: 4,
+                name: "Dim Sum Platter",
+                category: "appetizers",
+                price: 28.95,
+                description: "Assortment of steamed and fried dumplings, buns, and rolls",
+                image: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/53c005ec-2e18-4efb-b649-decbe72a06ff.png"
+            },
+            {
+                id: 5,
+                name: "Sweet and Sour Pork",
+                category: "mains",
+                price: 24.95,
+                description: "Crispy pork with bell peppers, pineapple, and tangy sauce",
+                image: "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/20c5e22f-f22b-43d6-8fb4-0a62feba515d.png"
+            },
+            {
+                id: 6,
+                name: "Hot and Sour Soup",
+                category: "appetizers",
+                price: 12.95,
+                description: "Traditional soup with tofu, mushrooms, bamboo shoots, and egg",
+                image: "https://placehold.co/400x300"
+            },
+            {
+                id: 7,
+                name: "Mango Pudding",
+                category: "desserts",
+                price: 9.95,
+                description: "Fresh mango pudding with coconut milk and fruit garnish",
+                image: "https://placehold.co/400x300"
+            },
+            {
+                id: 8,
+                name: "Beef Chow Mein",
+                category: "mains",
+                price: 26.95,
+                description: "Stir-fried noodles with beef, vegetables, and savory sauce",
+                image: "https://placehold.co/400x300"
+            },
+            {
+                id: 9,
+                name: "Fortune Cookies",
+                category: "desserts",
+                price: 5.95,
+                description: "Crispy cookies with sweet messages inside",
+                image: "https://placehold.co/400x300"
+            }
+        ];
+
+        // Initialize menu
+        function renderMenu(category = 'all') {
+            const container = document.getElementById('menuContainer');
+            container.innerHTML = '';
+            
+            const filteredItems = category === 'all' ? menuItems : menuItems.filter(item => item.category === category);
+            
+            filteredItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'bg-white rounded-lg shadow-lg overflow-hidden menu-item';
+                menuItem.innerHTML = `
+                    <div class="relative">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 bg-red-600 text-white px-3 py-1 text-sm font-semibold">
+                            ${item.category.charAt(0).toUpperCase() + item.category.slice(1)}
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">${item.name}</h3>
+                            <span class="text-lg font-bold text-red-600">$${item.price.toFixed(2)}</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">${item.description}</p>
+                        <button class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors w-full">
+                            Add to Order
+                        </button>
+                    </div>
+                `;
+                container.appendChild(menuItem);
+            });
+        }
+
+        // Search functionality
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                
+                if (query.length === 0) {
+                    searchResults.classList.add('hidden');
+                    return;
+                }
+                
+                const filteredItems = menuItems.filter(item => 
+                    item.name.toLowerCase().includes(query) || 
+                    item.description.toLowerCase().includes(query) ||
+                    item.category.toLowerCase().includes(query)
+                );
+                
+                if (filteredItems.length === 0) {
+                    searchResults.innerHTML = '<div class="p-4 text-gray-600">No items found</div>';
+                } else {
+                    searchResults.innerHTML = filteredItems.map(item => `
+                        <div class="p-4 border-b border-gray-200 hover:bg-gray-50 cursor-pointer" onclick="scrollToMenuItem(${item.id})">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">${item.name}</span>
+                                <span class="text-red-600 font-bold">$${item.price.toFixed(2)}</span>
+                            </div>
+                            <p class="text-sm text-gray-600">${item.description}</p>
+                        </div>
+                    `).join('');
+                }
+                
+                searchResults.classList.remove('hidden');
+            });
+            
+            // Hide search results when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                    searchResults.classList.add('hidden');
+                }
+            });
+        }
+
+        function scrollToMenuItem(itemId) {
+            // This would typically scroll to the specific menu item
+            document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Category filtering
+        function setupCategoryButtons() {
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    // Update button styles
+                    buttons.forEach(btn => {
+                        if (btn === this) {
+                            btn.classList.remove('bg-white', 'text-red-600', 'border');
+                            btn.classList.add('bg-red-600', 'text-white');
+                        } else {
+                            btn.classList.remove('bg-red-600', 'text-white');
+                            btn.classList.add('bg-white', 'text-red-600', 'border', 'border-red-600');
+                        }
+                    });
+                    
+                    renderMenu(category);
+                });
+            });
+        }
+
+        // Smooth scrolling for navigation
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMenu();
+            setupSearch();
+            setupCategoryButtons();
+            setupSmoothScrolling();
+            
+            // Set default active category button
+            document.querySelector('[data-category="all"]').classList.add('bg-red-600', 'text-white');
+        });
+    </script>
+</body>
+</html>
